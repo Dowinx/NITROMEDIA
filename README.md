@@ -9,6 +9,7 @@
 1 personne gèrera la haut de page (navbar)
 2 personnes gèrera le contenu 
 1 personne gèrera le pied de page (contact, reseaux sociaux)
+Celui qui finit avant sa partie, passera au responsive permettant d'avoir un affichage convenable sur mobile et tablette.
 
 ## Les personnes travaillant sur le PHP :
 Une personne gèrera les bases de données (mot de passe - utilisateur - email - id )
