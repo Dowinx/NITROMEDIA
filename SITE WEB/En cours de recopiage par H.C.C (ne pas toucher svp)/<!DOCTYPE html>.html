@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+    <html class="js shopify-feature__smart-payment-buttons--enabled" lang="en"
+    dir="ltr">
+        <head>
+            <!--Avant que vous vérifier le code, les exemples citer sont généralement partenaire avec shopify (en gros le site est partenaire avec Shopify)-->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta name="theme-color" content="#000000">
+            <!--Il faut mettre une information canonique (le lien du site)-->
+            <link rel="canonical" href="">
+            <!--Il faut mettre le support de payment (le site, par exemple https://cdn.shopify.com/)-->
+            <link rel="preconnect" href="">
+            <!--Il faut mettre le support des polices (je crois) (le site, par exemple https://fonts.shopifycdn.com)-->
+            <link rel="preconnect" href="">
+            <!--Sa permet de résoudre les problèmes de DNS (Exemple : https://productreviews.shopifycdn.com) (Definition de DNS : Le Domain Name System ou DNS est un service informatique distribué utilisé qui traduit les noms de domaine Internet en adresse IP ou autres enregistrements.)-->
+            <link rel="dns-prefetch" href="">
+            <!--Le logo affiché dans l'onglets et aussi dans "href="lien de l'image"-->
+            <link rel="shortcut icon" href="" type="image/png">
+            <title>NITRO MEDIA </title>
+            <meta name="description" content="Inserez un texte">
+            <meta property="og:site_name" content="NITRO MEDIA">
+            <!--Il faut insérez le lien du site-->
+            <meta property="og:url" content="">
+            <meta property="og:title" content="NITRO MEDIA">
+            <meta property="og:type" content="website">
+            <!--Le "inserez un texte" doit etre similaire a celui de la ligne 20-->
+            <meta property="og:description" content="Inserez un texte">
+            <!--Support Twitter :
+                <meta name="twitter:site" content="@">
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:title" content="NITRO MEDIA">
+                <meta name="twitter:description" content="Inserez un texte"
+            -->
+            <!--Il faut mettre un support de payment (pour la conversion de la moulagas (Exemple : //cdn.codeblackbelt.com/js/modules/currency-converter-plus/main.min.js?shop=slayinstore.myshopify.com))-->
+            <script type="text/javascript" async src=""
+            ></script>
+            <!--Support pour un chat en direct avec les modo (Par exemple : Chattez avec nous en direct)-->
+            <!--
+                <script type="text/javascript" async src="(site qui permet de supporter le chat online)"><s/script>
+            -->
+            <!--Le problème c'est qu'il manque une grosse parti d'une commande car les site est lié a Shopify-->
+            <!--La grosse parti en question :
+                <script type="text/javascript" async="" src="https://cdn.shopify.com/s/trekkie.storefront.e695302c3cd17296c85e559451c496db44e32e17.min.js"></script>
+                <script>
+                    window.performance && window.performance.mark &&
+                    window.performance.mark("shopify.content_for_header.start");
+                </script>
+                <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/59591491736/digital_wallets/dialog">
+                <meta name="shopify-checkout-api-token" content="0e0e02ef86ba18e827df2779c725a19b">
+            -->
+            <!--Il faut mettre un identifiant à : "data-shop-id="
+                Il faut mettre un paypal a dans la zone qui se situe vers : ""
+            -->
+            <meta id="in-context-paypal-metadata" data-shop-id="" data-venmo-suported="true" data-environment="production" data-paypal-v4="true" data-currency="EUR">
+            <!--Support Apple Pay :
+                <script id="apple-pay-shop-capabilities" type="application/json"
+                    {"shopId":(Un idantifiant apple requis),"countryCode":"FR","currencyCode":"EUR","merchantCapabilities":
+                    ["supports3DS"],"merchantId":"(Un identifiant apple requis)","merchantName":"NITRO MEDIA","requiredBillingContactFields":
+                    ["postalAddress","email"],"requiredShippingContactFields":["postalAddress","email"],"shippingType":"shipping","supportedNetworks":
+                    ["visa","masterCard","amex","discover","elo","jcb","chinaUnionPay"],"total":{"type":"pending","label":"NITRO MEDIA","amount":"1.00"},"shopifyPaymentsEnabled":true,"supportsSubscriptions":true}
+                </script>
+             -->
+            <!--Support Shopify
+                <script>
+                    var Shopify = Shopify || {};
+                    Shopify.shop = "(URL identifiant Shopify)";
+                    Shopify.locale = "fr";
+                    Shopify.currency = {"active":"EUR","rate":"1.0"};
+                    Shopify.country = "FR";
+                    Shopify.theme = {"name":"NITRO MEDIA","id":(identifiant Shopify comme 65678939),"theme_store_id":null,"role":"main"};
+                    Shopify.theme.handle = "null";
+                    Shopify.theme.style = {"id":null,"handle":null};
+                    Shopify.cdnHost = "cdn.shopify.com";
+                    Shopify.routes = Shopify.routes || {};
+                    Shopify.routes.root = "/";
+                </script>
+                <script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);
+                </script>
+                <script>
+                    !function(o){function n(){var o=[];function n()
+                    {o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var 
+                    t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);
+                </script>
+                <script>
+                (function() {
+                    function asyncLoad() {
+                        var urls = ["https:\/\/cdn.shopify.com\/shopifycloud\/shopify_chat\/storefront\/shopifyChatV1.js?api_env=production\u0026button_color=%23a802d4\u0026button_style=text\u0026i=chat_bubble\u0026p=bottom_right\u0026shop_id=vsWmskR_DnRACTthqlTxNBPuhLQoC-8_NeifjHxMjiQ\u0026t=chat_with_us\u0026v=1\u0026shop=slayinstore.myshopify.com","\/\/cdn.codeblackbelt.com\/js\/modules\/currency-converter-plus\/main.min.js?shop=slayinstore.myshopify.com"];
+                        for (var i = 0; i < urls.length; i++) {
+                            var s = document.createElement('script');
+                            s.type = 'text/javascript';
+                            s.async = true;
+                            s.src = urls[i];
+                            var x = document.getElementsByTagName('script')[0];
+                            x.parentNode.insertBefore(s, x);
+                        }
+                    };
+                    if(window.attachEvent) {
+                        window.attachEvent('onload', asyncLoad);
+                    } else {
+                        window.addEventListener('load', asyncLoad, false);
+                    }
+                })();
+            </script>
+            <script id="__st">
+                var __st={"a":59591491736,"offset":-18000,"reqid":"49edc063-ebe0-4c97-83da-fa38a8f44a9c","pageurl":"loganslayin.com\/","u":"69fc281ef5cf","p":"home"}; (je ne sais pas c'est quoi)
+            </script>
+            <script>
+                window.ShopifyPaypalV4VisibilityTracking = true;</script>
+                !function(o){o.addEventListener("DOMContentLoaded",function(){window.Shopify=window.Shopify||{},window.Shopify.recaptchaV3=window.Shopify.recaptchaV3||{siteKey:"6LcCR2cUAAAAANS1Gpq_mDIJ2pQuJphsSQaUEuc9"};var t=['form[action*="/contact"] input[name="form_type"][value="contact"]','form[action*="/comments"] input[name="form_type"][value="new_comment"]','form[action*="/account"] input[name="form_type"][value="customer_login"]','form[action*="/account"] input[name="form_type"][value="recover_customer_password"]','form[action*="/account"] input[name="form_type"][value="create_customer"]','form[action*="/contact"] input[name="form_type"][value="customer"]'].join(",");function n(e){e=e.target;null==e||null!=(e=function e(t,n){if(null==t.parentElement)return null;if("FORM"!=t.parentElement.tagName)return e(t.parentElement,n);for(var o=t.parentElement.action,r=0;r<n.length;r++)if(-1!==o.indexOf(n[r]))return t.parentElement;return null}(e,["/contact","/comments","/account"]))&&null!=e.querySelector(t)&&((e=o.createElement("script")).setAttribute("src","https://cdn.shopify.com/shopifycloud/storefront-recaptcha-v3/v0.6/index.js"),o.body.appendChild(e),o.removeEventListener("focus",n,!0),o.removeEventListener("change",n,!0),o.removeEventListener("click",n,!0))}o.addEventListener("click",n,!0),o.addEventListener("change",n,!0),o.addEventListener("focus",n,!0)})}(document);
+            </script>
+            <script integrity="sha256-qzgBevPPdZ2wrwu9HnUin2oYn1vx8ttCFpYwmYuWkCE=" data-source-attribution="shopify.loadfeatures" defer="defer" src="//cdn.shopify.com/shopifycloud/shopify/assets/storefront/load_feature-ab38017….js" crossorigin="anonymous"></script>
+            <script integrity="sha256-h+g5mYiIAULyxidxudjy/2wpCz/3Rd1CbrDf4NudHa4=" data-source-attribution="shopify.dynamic-checkout" defer="defer" src="//cdn.shopify.com/shopifycloud/shopify/assets/storefront/features-87e8399….js" crossorigin="anonymous"></script>
+            <style id="shopify-dynamic-checkout">
+                .shopify-payment-button__button--hidden {
+                    visibility: hidden;
+                }
+
+                .shopify-payment-button__button {
+                    border-radius: 4px;
+                    border: none;
+                    box-shadow: 0 0 0 0 transparent;
+                    color: white;
+                    cursor: pointer;
+                    display: block;
+                    font-size: 1em;
+                    font-weight: 500;
+                    line-height: 1;
+                    text-align: center;
+                    width: 100%;
+                    transition: background 0.2s ease-in-out;
+                }
+
+                .shopify-payment-button__button[disabled] {
+                    opacity: 0.6;
+                    cursor: default;
+                }
+
+                .shopify-payment-button__button--unbranded {
+                    background-color: #1990c6;
+                    padding: 1em 2em;
+                }
+
+                .shopify-payment-button__button--unbranded:hover:not([disabled]) {
+                    background-color: #136f99;
+                }
+
+                .shopify-payment-button__more-options {
+                    background: transparent;
+                    border: 0 none;
+                    cursor: pointer;
+                    display: block;
+                    font-size: 1em;
+                    margin-top: 1em;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .shopify-payment-button__more-options:hover:not([disabled]) {
+                    text-decoration: underline;
+                }
+
+                .shopify-payment-button__more-options[disabled] {
+                    opacity: 0.6;
+                    cursor: default;
+                }
+
+                .shopify-payment-button__button--branded {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 44px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .shopify-payment-button__button--branded .shopify-cleanslate {
+                    flex: 1 !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+            </style>
+            <style id="shopify-dynamic-checkout-cart">
+                @media screen and (min-width: 750px) {
+                    #dynamic-checkout-cart {
+                        min-height: 50px;
+                    }
+                }
+
+                @media screen and (max-width: 750px) {
+                    #dynamic-checkout-cart {
+                        min-height: 120px;
+                    }
+                }
+            </style>
+            <style id="shopify-dynamic-checkout-cart">
+                @media screen and (min-width: 750px) {
+                    #dynamic-checkout-cart {
+                        min-height: 50px;
+                    }
+                }
+
+                @media screen and (max-width: 750px) {
+                    #dynamic-checkout-cart {
+                        min-height: 120px;
+                    }
+                }
+            </style>
+            <script>
+                window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');
+            </script>
+            <script>
+                    var theme = {
+                        stylesheet: "//cdn.shopify.com/s/files/1/0595/9149/1736/t/11/assets/theme.css?v=128488760257023232631664417309",
+                        template: "index",
+                        routes: {
+                            home: "/",
+                            cart: "/cart.js",
+                            cartPage: "/cart",
+                            cartAdd: "/cart/add.js",
+                            cartChange: "/cart/change.js"
+                        },
+                        strings: {
+                            addToCart: "Add to cart",
+                            soldOut: "Sold Out",
+                            unavailable: "Unavailable",
+                            regularPrice: "Regular price",
+                            salePrice: "Sale price",
+                            inStockLabel: "In stock, ready to ship",
+                            stockLabel: "Low stock - [count] items left",
+                            willNotShipUntil: "Ready to ship [date]",
+                            willBeInStockAfter: "Back in stock [date]",
+                            waitingForStock: "Inventory on the way",
+                            cartItems: "[count] items",
+                            cartConfirmDelete: "Are you sure you want to remove this item?",
+                            cartTermsConfirmation: "You must agree with the terms and conditions of sales to check out"
+                        },
+                        settings: {
+                            dynamicVariantsEnable: true,
+                            cartType: "drawer",
+                            isCustomerTemplate: false,
+                            moneyFormat: "${{amount}}",
+                            quickView: true,
+                            hoverProductGrid: true,
+                            themeName: 'Streamline',
+                            themeVersion: "4.4.2"
+                        }
+                    };
+
+                    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+            </script>
+            <style data-shopify>
+                :root {
+                    --typeHeaderPrimary: "Roboto Condensed";
+                    --typeHeaderFallback: sans-serif;
+                    --typeHeaderSize: 47px;
+                    --typeHeaderStyle: italic;
+                    --typeHeaderWeight: 700;
+                    --typeHeaderLineHeight: 1;
+                    --typeHeaderSpacing: -0.025em;
+
+                    --typeBasePrimary:"Roboto Condensed";
+                    --typeBaseFallback:sans-serif;
+                    --typeBaseSize: 18px;
+                    --typeBaseWeight: 400;
+                    --typeBaseStyle: normal;
+                    --typeBaseSpacing: 0.025em;
+                    --typeBaseLineHeight: 1.5;
+
+    
+                      --buttonRadius: 35px;
+    
+
+                    --iconWeight: 5px;
+                    --iconLinecaps: miter;
+                }
+
+  
+
+                .hero {
+                    background-image: linear-gradient(100deg, #000000 40%, #212121 63%, #000000 79%);
+                }
+
+                .placeholder-content,
+                .image-wrap,
+                .skrim__link,
+                .pswp__img--placeholder {
+                    background-image: linear-gradient(100deg, #000000 40%, #000000 63%, #000000 79%);
+                }
+            </style>
+            -->
+            <style>
+                @font-face {
+                font-family: "Inserez un edit 1";
+                font-weight: 700;
+                font-style: italic;
+                font-display: swap;
+                src: url("") format(""),
+                     url("") format("");
+                }
+
+                @font-face {
+                font-family: "Inserez un édit 1";
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+                src: url("") format(""),
+                     url("") format("");
+                }
+
+
+                @font-face {
+                font-family: "Inserez un edit 1";
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+                src: url("") format(""),
+                     url("") format("");
+                }
+
+                @font-face {
+                font-family: "Inserez un edit 1";
+                font-weight: 400;
+                font-style: italic;
+                font-display: swap;
+                src: url("") format(""),
+                     url("") format("");
+                }
+
+                @font-face {
+                font-family: "Inserez un edit 1";
+                font-weight: 700;
+                font-style: italic;
+                font-display: swap;
+                src: url("") format(""),
+                     url("") format("");
+                }
+
+
+                    body,
+                    input,
+                    textarea,
+                    button,
+                    select {
+                        -webkit-font-smoothing: antialiased;
+                        -webkit-text-size-adjust: 100%;
+                        text-rendering: optimizeSpeed;
+                        font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+                        font-size: calc(var(--typeBaseSize) * 0.85);
+                        font-weight: var(--typeBaseWeight);
+                        font-style: var(--typeBaseStyle);
+                        letter-spacing: var(--typeBaseSpacing);
+                        line-height: var(--typeBaseLineHeight);
+                    }
+
+                    @media only screen and (min-width: 769px) {
+                        body,
+                        input,
+                        textarea,
+                        button,
+                        select {
+                            font-size: var(--typeBaseSize);
+                        }
+                    }
+
+                    .page-container,
+                    .overscroll-loader {
+                        display: none;
+                    }
+
+                    h1, .h1,
+                    h3, .h3,
+                    h4, .h4,
+                    h5, .h5,
+                    h6, .h6,
+                    .section-header__title,
+                    .spr-header-title.spr-header-title {
+                        font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
+                        font-weight: var(--typeHeaderWeight);
+                        font-style: italic;
+                        letter-spacing: var(--typeHeaderSpacing);
+                        line-height: var(--typeHeaderLineHeight);
+                        word-break: break-word;
+
+    
+                            text-transform: uppercase;
+    
+                    }
+
+                    h2, .h2 {
+                        font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+                        font-weight: var(--typeBaseWeight);
+                        letter-spacing: var(--typeBaseSpacing);
+                        line-height: var(--typeBaseLineHeight);
+                    }
+
+  
+                    @keyframes pulse-fade {
+                        0% {
+                            opacity: 0;
+                        }
+                        50% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 0;
+                        }
+                    }
+
+                    .splash-screen {
+                        box-sizing: border-box;
+                        display: flex;
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10001;
+                        background-color: #000000;
+                    }
+
+                    .splash-screen__loader {
+                        max-width: 150px;
+                    }
+
+                    @media only screen and (min-width: 769px) {
+                        .splash-screen__loader {
+                            max-width: 350px;
+                        }
+                    }
+
+                    .splash-screen img {
+                        display: block;
+                        max-width: 100%;
+                        border: 0 none;
+                        animation: pulse-fade 0.4s infinite linear;
+                    }
+
+                    .loader-text {
+                        letter-spacing: 0.2em;
+                        font-size: 1.5em;
+                        text-transform: uppercase;
+                        animation: pulse-fade 0.4s infinite linear;
+                    }
+
+                    .loader-logo {
+                        display: none;
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #000000;
+                        z-index: 6000;
+                    }
+
+                    .loader-logo__img {
+                        display: block;
+                    }
+
+                    .transition-body {
+                        opacity: 0;
+                    }
+
+                    .btn--loading span:after {
+                        content: "Loading";
+                    }
+            </style>
+            <!--Encore des Scripts de Shopify
+            <link href="//cdn.shopify.com/s/files/1/0595/9149/1736/t/11/assets/theme.css?v=1284887…" rel="stylesheet" type="text/css" media="all">
+            <script src="//cdn.shopify.com/s/files/1/0595/9149/1736/t/11/assets/vendor-v6.js" defer="defer"></script>
+            <script src="//cdn.shopify.com/s/files/1/0595/9149/1736/t/11/assets/theme.js?v=7647619…" defer="defer"></script>
+            <script src="//cdn.codeblackbelt.com/js/modules/currency-converter-plus/main.min.js?shop=slayinstore.myshopify.com" defer></script>
+            <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0595/9149/1736/files/logo_00000_a7422a00-e7b7-42ef-a70f-b65e2e0ce54f.png?v=1662696649">
+            <meta property="og:image:secure_url" content="https://cdn.shopify.com/s/files/1/0595/9149/1736/files/logo_00000_a7422a00-e7b7-42ef-a70f-b65e2e0ce54f.png?v=1662696649">
+            <meta property="og:image:width" content="2160">
+            <meta property="og:image:height" content="2160">
+            <link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
+            <script>
+                (function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 59591491736,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());
+            </script>
+            <script>
+                window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+                window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+                window.ShopifyAnalytics.meta.currency = 'USD';
+                var meta = {"page":{"pageType":"home"}};
+                for (var attr in meta) {
+                    window.ShopifyAnalytics.meta[attr] = meta[attr];
+                }
+            </script>
+            <script>window.ShopifyAnalytics.merchantGoogleAnalytics = function() { }; </script>
+            -->
+            <script class="analystics">
+                (function () {
+                    var customDocumentWrite = function(content) {
+                        var jquery = null;
+
+                        if (window.jQuery) {
+                            jquery = window.jQuery;
+                        } else if (window.Checkout && window.Checkout.$) {
+                            jquery = window.Checkout.$;
+                        }
+
+                        if (jquery) {
+                            jquery('body').append(content);
+                        }
+                    };
+
+                    var hasLoggedConversion = function(token) {
+                        if (token) {
+                            return document.cookie.indexOf('loggedConversion=' + token) !== -1;
+                        }
+                        return false;
+                    }
+
+                    var setCookieIfConversion = function(token) {
+                        if (token) {
+                            var twoMonthsFromNow = new Date(Date.now());
+                            twoMonthsFromNow.setMonth(twoMonthsFromNow.getMonth() + 2);
+
+                            document.cookie = 'loggedConversion=' + token + '; expires=' + twoMonthsFromNow;
+                        }
+                    }
+
+                    var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
+                    if (trekkie.integrations) {
+                        return;
+                    }
+                    trekkie.methods = [
+                        'identify',
+                        'page',
+                        'ready',
+                        'track',
+                        'trackForm',
+                        'trackLink'
+                    ];
+                    trekkie.factory = function(method) {
+                        return function() {
+                            var args = Array.prototype.slice.call(arguments);
+                            args.unshift(method);
+                            trekkie.push(args);
+                            return trekkie;
+                        };
+                    };
+                    for (var i = 0; i < trekkie.methods.length; i++) {
+                        var key = trekkie.methods[i];
+                        trekkie[key] = trekkie.factory(key);
+                    }
+                    trekkie.load = function(config) {
+                        trekkie.config = config || {};
+                        trekkie.config.initialDocumentCookie = document.cookie;
+                        var first = document.getElementsByTagName('script')[0];
+                        var script = document.createElement('script');
+                        script.type = 'text/javascript';
+                        script.onerror = function(e) {
+                            var scriptFallback = document.createElement('script');
+                            scriptFallback.type = 'text/javascript';
+                            scriptFallback.onerror = function(error) {
+                                    var Monorail = {
+                            produce: function produce(monorailDomain, schemaId, payload) {
+                                var currentMs = new Date().getTime();
+                                var event = {
+                                    schema_id: schemaId,
+                                    payload: payload,
+                                    metadata: {
+                                        event_created_at_ms: currentMs,
+                                        event_sent_at_ms: currentMs
+                                    }
+                                };
+                                return Monorail.sendRequest("https://" + monorailDomain + "/v1/produce", JSON.stringify(event));
+                            },
+                            sendRequest: function sendRequest(endpointUrl, payload) {
+                                if (window && window.navigator && typeof window.navigator.sendBeacon === 'function' && typeof window.Blob === 'function' && !Monorail.isIos12()) {
+                                    var blobData = new window.Blob([payload], {
+                                        type: 'text/plain'
+                                    });
+    
+                                    if (window.navigator.sendBeacon(endpointUrl, blobData)) {
+                                        return true;
+                                    }
+    
+                                }
+    
+                                var xhr = new XMLHttpRequest();
+    
+                                try {
+                                    xhr.open('POST', endpointUrl);
+                                    xhr.setRequestHeader('Content-Type', 'text/plain');
+                                    xhr.send(payload);
+                                } catch (e) {
+                                    console.log(e);
+                                }
+    
+                                return false;
+                            },
+                            isIos12: function isIos12() {
+                                return window.navigator.userAgent.lastIndexOf('iPhone; CPU iPhone OS 12_') !== -1 || window.navigator.userAgent.lastIndexOf('iPad; CPU OS 12_') !== -1;
+                            }
+                        };
+                        Monorail.produce('monorail-edge.shopifysvc.com',
+                            'trekkie_storefront_load_errors/1.1',
+                            {shop_id: 69420,
+                            theme_id: 69420,
+                            app_name: "storefront",
+                            context_url: window.location.href,
+                            source_url: ""});
+
+                            };
+                            scriptFallback.async = true;
+                            scriptFallback.src = '';
+                            first.parentNode.insertBefore(scriptFallback, first);
+                        };
+                        script.async = true;
+                        script.src = '';
+                        first.parentNode.insertBefore(script, first);
+                    };
+                    trekkie.load(
+                        {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":69420,"isMerchantRequest":null,"themeId":69420,"themeCityHash":"69420","contentLanguage":"en","currency":"EUR"},"isServerSideCookieWritingEnabled":true},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer"}}
+                    );
+
+                    var loaded = false;
+                    trekkie.ready(function() {
+                        if (loaded) return;
+                        loaded = true;
+
+                        window.ShopifyAnalytics.lib = window.trekkie;
+    
+
+                        var originalDocumentWrite = document.write;
+                        document.write = customDocumentWrite;
+                        try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
+                        document.write = originalDocumentWrite;
+
+                        window.ShopifyAnalytics.lib.page(null,{"pageType":"home"});
+
+                        var match = window.location.pathname.match(/checkouts\/(.+)\/(thank_you|post_purchase)/)
+                        var token = match? match[1]: undefined;
+                        if (!hasLoggedConversion(token)) {
+                            setCookieIfConversion(token);
+      
+                        }
+                    });
+
+  
+                            var eventsListenerScript = document.createElement('script');
+                            eventsListenerScript.async = true;
+                            eventsListenerScript.src = "";
+                            document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
+    
+                })();
+            </script>
+            <script async src=""></script>
+            <script class="boomerang">
+                (function () {
+                    if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+                        return;
+                    }
+                    window.BOOMR = window.BOOMR || {};
+                    window.BOOMR.snippetStart = new Date().getTime();
+                    window.BOOMR.snippetExecuted = true;
+                    window.BOOMR.snippetVersion = 12;
+                    window.BOOMR.application = "storefront-renderer";
+                    window.BOOMR.themeName = "Streamline";
+                    window.BOOMR.themeVersion = "4.4.2";
+                    window.BOOMR.shopId = 69420;
+                    window.BOOMR.themeId = 69420;
+                    window.BOOMR.url =
+                        "";
+                    var where = document.currentScript || document.getElementsByTagName("script")[0];
+                    var parentNode = where.parentNode;
+                    var promoted = false;
+                    var LOADER_TIMEOUT = 3000;
+                    function promote() {
+                        if (promoted) {
+                            return;
+                        }
+                    var script = document.createElement("script");
+                    script.id = "boomr-scr-as";
+                    script.src = window.BOOMR.url;
+                    script.async = true;
+                    parentNode.appendChild(script);
+                    promoted = true;
+                }
+                function iframeLoader(wasFallback) {
+                    promoted = true;
+                    var dom, bootstrap, iframe, iframeStyle;
+                    var doc = document;
+                    var win = window;
+                    window.BOOMR.snippetMethod = wasFallback ? "if" : "i";
+                    bootstrap = function(parent, scriptId) {
+                        var script = doc.createElement("script");
+                        script.id = scriptId || "boomr-if-as";
+                        script.src = window.BOOMR.url;
+                        BOOMR_lstart = new Date().getTime();
+                        parent = parent || doc.body;
+                        parent.appendChild(script);
+                    };
+                    if (!window.addEventListener && window.attachEvent && navigator.userAgent.match(/MSIE [67]./)) {
+                        window.BOOMR.snippetMethod = "s";
+                        bootstrap(parentNode, "boomr-async");
+                        return;
+                    }
+                    iframe = document.createElement("IFRAME");
+                    iframe.src = "about:blank";
+                    iframe.title = "";
+                    iframe.role = "presentation";
+                    iframe.loading = "eager";
+                    iframeStyle = (iframe.frameElement || iframe).style;
+                    iframeStyle.width = 0;
+                    iframeStyle.height = 0;
+                    iframeStyle.border = 0;
+                    iframeStyle.display = "none";
+                    parentNode.appendChild(iframe);
+                    try {
+                        win = iframe.contentWindow;
+                        doc = win.document.open();
+                    } catch (e) {
+                        dom = document.domain;
+                        iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                        win = iframe.contentWindow;
+                        doc = win.document.open();
+                    }
+                    if (dom) {
+                        doc._boomrl = function() {
+                            this.domain = dom;
+                            bootstrap();
+                        };
+                        doc.write("<body onload='document._boomrl();'>");
+                    } else {
+                        win._boomrl = function() {
+                            bootstrap();
+                        };
+                        if (win.addEventListener) {
+                            win.addEventListener("load", win._boomrl, false);
+                        } else if (win.attachEvent) {
+                            win.attachEvent("onload", win._boomrl);
+                        }
+                    }
+                    doc.close();
+                }
+                var link = document.createElement("link");
+                if (link.relList &&
+                    typeof link.relList.supports === "function" &&
+                    link.relList.supports("preload") &&
+                    ("as" in link)) {
+                    window.BOOMR.snippetMethod = "p";
+                    link.href = window.BOOMR.url;
+                    link.rel = "preload";
+                    link.as = "script";
+                    link.addEventListener("load", promote);
+                    link.addEventListener("error", function() {
+                        iframeLoader(true);
+                    });
+                    setTimeout(function() {
+                        if (!promoted) {
+                            iframeLoader(true);
+                        }
+                    }, LOADER_TIMEOUT);
+                    BOOMR_lstart = new Date().getTime();
+                    parentNode.appendChild(link);
+                } else {
+                    iframeLoader(false);
+                }
+                function boomerangSaveLoadTime(e) {
+                    window.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+                }
+                if (window.addEventListener) {
+                    window.addEventListener("load", boomerangSaveLoadTime, false);
+                } else if (window.attachEvent) {
+                    window.attachEvent("onload", boomerangSaveLoadTime);
+                }
+                if (document.addEventListener) {
+                    document.addEventListener("onBoomerangLoaded", function(e) {
+                        e.detail.BOOMR.init({
+                            producer_url: "",
+                            ResourceTiming: {
+                                enabled: true,
+                                trackedResourceTypes: ["script", "img", "css"]
+                            },
+                        });
+                        e.detail.BOOMR.t_end = new Date().getTime();
+                    });
+                } else if (document.attachEvent) {
+                    document.attachEvent("onpropertychange", function(e) {
+                        if (!e) e=event;
+                        if (e.propertyName === "onBoomerangLoaded") {
+                            e.detail.BOOMR.init({
+                                producer_url: "",
+                                ResourceTiming: {
+                                    enabled: true,
+                                    trackedResourceTypes: ["script", "img", "css"]
+                                },
+                            });
+                            e.detail.BOOMR.t_end = new Date().getTime();
+                        }
+                    });
+                }
+            })();
+            </script>
+            <!--Il faut mettre le site du réferencment du script bommerang (qui est juste en haut)-->
+            <link href="">
+            <!--Encore et encore des support Shopify a la con
+            <script id="web-pixels-manager-publish">
+                window.Shopify = window.Shopify || {};
+                window.Shopify.analytics = window.Shopify.analytics || {};
+                window.Shopify.analytics.replayQueue = [];
+                window.Shopify.analytics.publish = function publish(eventName, payload, options) {
+                    window.Shopify.analytics.replayQueue.push([eventName, payload, options]);
+                }
+            </script>
+            <script id="web-pixels-manager-setup-esm" type="module">
+                    import webPixelsManager from "https://cdn.shopify.com/shopifycloud/web-pixels-manager/0.0.163/esm/browser.js";
+                const webPixelsManagerAPI = webPixelsManager.init({
+                    shopId: 59591491736,
+                    storefrontBaseUrl: "https://loganslayin.com",
+                    cdnBaseUrl: "https://cdn.shopify.com",
+                    surface: "storefront-renderer",
+                    webPixelExtensionBaseUrl: "https://cdn.shopify.com",
+                    webPixelsConfigList: [],
+                    initData: {"customer":null,"cart":null,"productVariants":[],"checkout":null},
+                });
+                window.Shopify.analytics.replayQueue.forEach(function(event) {
+                    webPixelsManagerAPI.publishCustomEvent(event[0], event[1], event[2]);
+                });
+                window.Shopify.analytics.replayQueue = [];
+                window.Shopify.analytics.publish = webPixelsManagerAPI.publishCustomEvent;
+                webPixelsManagerAPI.publish("page_viewed");
+            </script>
+            <script id="web-pixels-manager-setup-legacy" nomodule>
+                    (function setup(initConfig, pageEvents, web_pixels_manager_asset_url) {
+                    var script = document.createElement("script");
+                    script.setAttribute("src", web_pixels_manager_asset_url);
+                    script.setAttribute("async", true);
+                    var head = document.getElementsByTagName("head")[0];
+                    head.appendChild(script);
+                    script.onload = function onload() {
+                        var webPixelsManagerAPI = window.webPixelsManager.init(initConfig);
+                        pageEvents(webPixelsManagerAPI);
+                        window.Shopify.analytics.replayQueue.forEach(function(event) {
+                            webPixelsManagerAPI.publishCustomEvent(event[0], event[1], event[2]);
+                        });
+                        window.Shopify.analytics.publish = webPixelsManagerAPI.publishCustomEvent;
+                    };
+                }
+                )(
+                    {
+                        shopId: 69420,
+                        storefrontBaseUrl: "https://loganslayin.com",
+                        cdnBaseUrl: "https://cdn.shopify.com",
+                        surface: "storefront-renderer",
+                        webPixelExtensionBaseUrl: "https://cdn.shopify.com",
+                        webPixelsConfigList: [],
+                        initData: {"customer":null,"cart":null,"productVariants":[],"checkout":null},
+                    },
+                    function pageEvents(webPixelsManagerAPI) {
+                        webPixelsManagerAPI.publish("page_viewed");
+                    },
+                    "https://cdn.shopify.com/shopifycloud/web-pixels-manager/0.0.163/iife/browser.js"
+                );
+            </script>
+            <script id="boomr-scr-as" src="https://cdn.shopify.com/shopifycloud/boomerang/shopify-boomerang-1.0.0.min.js" async></script>
+            <script type="module" defer src="https://cdn.shopify.com/shopifycloud/media-analytics/v0.1/analytics.js"></script>
+            <script src="https://cdn.shopify.com/shopifycloud/payment-sheet/assets/latest/spb.en.js?v=2" data-source-attribute="shopify.dynamic_checkout.product.init"></script>
+            
+            -->
+
+        </head>
+        <body>
+
+        </body>
+    </html>    
