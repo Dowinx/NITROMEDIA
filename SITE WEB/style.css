@@ -1,0 +1,43 @@
+body {
+    padding : 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    line-height: 36px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: table;
+    
+
+}
+
+nav ul li {
+    padding-left: 20px;
+    margin-left: 20px;
+    display: table-cell;
+    width: 1%;
+}   
+
+nav {
+    text-align: center;
+    position: sticky;
+}
+
+footer {
+text-align: center;
+padding-bottom: 15%;
+}
+
+#bottom {
+    padding-bottom: 50%;
+    padding-top: 15%;
+    margin-left: 20px;
+}
