@@ -8,48 +8,144 @@
         top: 0;
         bottom: 0;
         z-index: -1;
+        opacity: 100%;
         }
+
+html {
+    height: 100%;
+}
 
 body {
     padding : 0;
     margin: 0;
-    background-color: black;
     color: white;
+    height: 100%;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
+    font-size: 22px;
     display: block;
-    line-height: 36px;
 }
 
 nav ul {
     list-style-type: none;
     display: table;
-    
-
+    padding-left: 20px;
 }
 
 nav ul li {
-    padding-left: 20px;
-    margin-left: 20px;
+    padding-left: 10px;
+    margin-left: 75%;
     display: table-cell;
     width: 1%;
 }   
 
 nav {
     text-align: center;
-    position: sticky;
+    display: flex;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    background-color: grey;
+    justify-content: space-between;
+}
+
+nav .profile {
+    float: right;
+}
+
+nav .profile img {
+	width: 60px;
+	height: 60px;
+    float: right;   
+
+}
+nav .profile li  {
+    list-style-type: none;
+}
+
+nav .inscription {
+    float: right;
+}
+
+nav .inscription img {
+	width: 60px;
+	height: 60px;
+    float: right;
+    margin-right: 20px;
+
+}
+
+nav .inscription li  {
+    list-style-type: none;
 }
 
 footer {
-text-align: center;
-padding-bottom: 15%;
+    text-align: center;
+    padding-bottom: 15%;
 }
-
+    
 #bottom {
     padding-bottom: 50%;
     padding-top: 15%;
     margin-left: 20px;
 }
+
+
+/* nav {
+    background-color: rgb(44, 43, 43);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+}
+
+nav .profile {
+    display: flex;
+    text-align: center;
+    margin: 5px;
+}
+
+nav .profile img {
+	width: 40px;
+	height: 40px;
+	border-radius: 75%;
+}
+
+nav .profile h1 {
+    margin-left: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-right: 40px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 20px;
+    cursor: pointer;
+    border-left: 1px solid grey;
+    padding-left: 10px;
+}
+
+nav ul img {
+    width: 20px;
+	height: 20px;
+    border-radius: 75%;
+    float: right;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+} */
+
+
+
