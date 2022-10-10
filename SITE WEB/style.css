@@ -26,13 +26,15 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 22px;
-    display: block;
+    display: inline-block;
+    margin-left: 20px;
+    
 }
 
 nav ul {
     list-style-type: none;
     display: table;
-    padding-left: 20px;
+    text-align: center;
 }
 
 nav ul li {
@@ -40,7 +42,9 @@ nav ul li {
     margin-left: 75%;
     display: table-cell;
     width: 1%;
-}   
+    padding: 20PX;
+    
+}
 
 nav {
     text-align: center;
@@ -49,35 +53,31 @@ nav {
     align-items: center;
     width: 100%;
     background-color: grey;
-    justify-content: space-between;
+    justify-content: center;
+    
 }
 
-nav .profile {
-    float: right;
-}
+
 
 nav .profile img {
 	width: 60px;
-	height: 60px;
-    float: right;   
+	height: 60px;   
     opacity: 50%;
+    margin-left: 30px;
 }
 nav .profile li  {
     list-style-type: none;
 }
 
-nav .inscription {
-    float: right;
-}
+
 
 nav .inscription img {
 	width: 60px;
 	height: 60px;
-    float: right;
     margin-right: 20px;
     border-radius: 75%;
     opacity: 50%;
-
+    margin-left: 20px;
 }
 
 nav .inscription li  {
@@ -95,6 +95,16 @@ footer {
     margin-left: 20px;
 }
 
+.iconpack1 {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.iconpack1 img {
+    width : 500px;
+    height : 500px;
+    margin: 50px;
+    border-radius: 50px;
+}
 
 /* nav {
     background-color: rgb(44, 43, 43);
