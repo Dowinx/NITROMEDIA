@@ -106,25 +106,25 @@ footer {
     border-radius: 50px;
 }
 
-.icon1 {
+[class*="icon-"] {
     opacity: 0;
     transform: translateY(30px);
 }
 
-.icon1-visble {
+.icon1-visible {
     opacity: 1;
     transform: translateY(0);
-    transition: 1s;
+    transition: 1s cubic-bezier(.98, 0, 0, 1);
 }
 
-/*.icon-1{
+.icon-1 {
     transition-delay: .1s;
 }
 
 .icon-2 {
     transition-delay: .2s;
 }
-*/
+
 
 /* nav {
     background-color: rgb(44, 43, 43);
