@@ -52,7 +52,7 @@ nav {
     top: 0;
     align-items: center;
     width: 100%;
-    background-color: grey;
+    /* background-color: grey; */
     justify-content: center;
     
 }
@@ -62,7 +62,6 @@ nav {
 nav .profile img {
 	width: 60px;
 	height: 60px;   
-    opacity: 50%;
     margin-left: 30px;
 }
 nav .profile li  {
@@ -76,7 +75,6 @@ nav .inscription img {
 	height: 60px;
     margin-right: 20px;
     border-radius: 75%;
-    opacity: 50%;
     margin-left: 20px;
 }
 
@@ -106,6 +104,7 @@ footer {
     border-radius: 50px;
 }
 
+
 [class*="icon-"] {
     opacity: 0;
     transform: translateY(30px);
@@ -123,6 +122,31 @@ footer {
 
 .icon-2 {
     transition-delay: .2s;
+}
+
+
+
+nav ul li .animation-border + .animation-border {
+        border-left: 1px solid #aaa;
+      }
+      
+nav ul li .animation-border::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5px;
+    border-bottom: white;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: .3s ease-in-out;
+}
+      
+nav ul li .animation-border:hover::after {
+    transform: scaleX(1);
+    border-color: white;
+    border-bottom: 1px solid white;
 }
 
 
