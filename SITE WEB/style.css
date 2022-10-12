@@ -245,8 +245,14 @@ label {
 }
 
 #videopreview {
-    height: 20%;
-    width: 20%;
+    height: 80%;
+    width: auto;
+    padding-left: 40px;
+}
+
+.title-pack1caracteristic {
+    text-align: center;
+    font-size: 60px;
 }
 /* .title span {
     display: inline-block;
