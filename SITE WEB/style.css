@@ -153,6 +153,28 @@ footer {
 .icon1 {
     display: inline-block;
 }
+
+.title span {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.title span span {
+    display: block;
+    animation: titleReveal .7s both;
+}
+
+@keyframes  titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 /* nav ul li .animation-border + .animation-border {
         border-left: 1px solid #aaa;
       }
