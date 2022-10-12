@@ -4,7 +4,7 @@ const options = {
     rootMargin: '0px',
     threshold: ratio
   }
-  
+  // ANIM des pack est des decription: HOME
   const handleIntersect = function (entries, observer) {
     entries.forEach(function (entry) {
     if (entry.intersectionRatio > ratio) {
@@ -22,57 +22,87 @@ const observer = new IntersectionObserver(handleIntersect, options)
   document.querySelectorAll('[class*="icon-"]').forEach(function(r) {
     observer.observe(r)
   })
-
- const txtAnim = document.querySelectorAll('h1')
-
- new Typewriter(txtAnim, {
-    // deleteSpeed: 20
- })
- .typeString('Editing Pack')
-  .pauseFor(300)
-  .typeString('<strong>,Everything in the shop</strong>')  
-  .start()
-  
-
-
-
-
-
-// // animation mot par mot
-// const title = document.querySelector
-//   function animateTitle(selector) {
-//     const title = document.querySelector(selector) 
-//     if (title === null ) {
-//       console.error('Impossible de triuver l\'élément' + selector)
-//       return
-//     }
-//   }
-
-
-//   // On construit un tableau contenant la nouvelle structure
-
-//   const children = Array.from(animateTitle.childrenNodes)
-//    let elements = []
-//   children.forEach(child => {
-//     if (child.nodeType === Node.TEXT_NODE) {
-//         const words = child.textContent.split(' ')
-//         const spans = words.map(wrapWord)
-//         console.log(spans)
-//         elements =elements.concat(spans)
-//   }else {
-//       elements.push(child)
-//     }
-//   })
-// // On utilise ce tableau et on injecte les éléments dans title
+ 
+ 
+  // ANIM des pack est des decription: Editing Pack
+const handleIntersect2 = function (entries, observer) {
+    entries.forEach(function (entry) {
+    if (entry.intersectionRatio > ratio) {
+       entry.target.classList.add('icon2-visible')
+        observer.unobserve(entry.target)
+        
+    }     
+    })
+    
+}
+ 
+              
+const observer2 = new IntersectionObserver(handleIntersect2, options)
+  document.querySelectorAll('[class*="icon2-"]').forEach(function(r2) {
+    observer2.observe(r2)
+  })
 
 
 
-// function wrapWord (word) {
-//   const span = document.createElement('span')
-//   const span2 = document.createElement('span')
-//   span.appendChild(span2)
-//   span2.innerHTML = word
-//   return span
-// }
+// ANIM TITLE PACK
+const txtAnime = document.querySelector('#h1');
+new Typewriter(txtAnime, {
+  deleteSpeed: 20
+})
+.changeDelay(5)
+.typeString ('<strong>EDITING PACKS</strong></br>')
+.pauseFor(300)
+.typeString('EVERYTHING IN THE SHOP')
+.pause(1000)
+.start()
+.deleteChars(50)
+.typeString ('<strong>EDITING PACKS</strong></br>')
+.pauseFor(300)
+.typeString('EVERYTHING IN THE SHOP')
+.pause(650)
+.start()
 
-// animateTitle('.title')
+// ANIMATION TITLE SERVICES
+const txtAnime1 = document.querySelector('#h2');
+new Typewriter(txtAnime1, {
+  deleteSpeed: 20
+})
+.changeDelay(5)
+.typeString ('<strong>SERVICES DE MONTAGES</strong></br>')
+.pauseFor(300)
+.typeString('POUR VOUS')
+.pause(1000)
+.deleteChars(50)
+.typeString ('<strong>CHOISISSEZ BIEN</strong></br>')
+.pauseFor(300)
+.typeString('VOS SERVICES')
+.pause(650)
+.start()
+
+
+
+// ANIM TITLE FAQ
+const txtAnime2 = document.querySelector('#h3');
+new Typewriter(txtAnime2, {
+  deleteSpeed: 20
+})
+.changeDelay(5)
+.typeString ('<strong>FAQ</strong></br>')
+.pauseFor(300)
+.typeString('AND')
+.pause(1000)
+.deleteChars(20)
+.typeString ('<strong>CONTACT</strong></br>')
+.pauseFor(300)
+.typeString('IN THIS PAGE')
+.pause(650)
+.start()
+
+// Animation de l'espace chariot
+const text = document.querySelector('.chariot');
+const strText = text.textContent;
+const splitText = strText.split("");
+
+for(let i=0; i < splitText.length; i++){
+  text.innerHTML += "<span>"+ splitText[i] + "</span>";
+}
