@@ -233,9 +233,11 @@ label {
 }
 .title-contact {
     text-align: center;
-    font-size: 50px;;
+    font-size: 50px;
 }
-
+.contact h2 {
+    padding-top: 40px;
+}
 .faq {
     text-align: center;
 } 

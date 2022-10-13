@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+        <title>NITROMEDIA</title>
+        <script src="../index.js" defer></script>
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+       </head>
+        
+        <body>
+            <nav>
+                <ul>
+                    <li><a href ="../index.html" class="animation-border">Home</a></li>
+                    <li><a href ="../navbar html\pack.html"class="animation-border">Editing Packs</a><a</li>
+                    <li><a href ="../navbar html\services.html"class="animation-border">Services</a></li>
+                    <li><a href ="../navbar html\contact.html"class="animation-border">Contact & FAQ</a></li>             
+                </ul>
+                <div class="profile">
+                    <li><a href="../navbar html/panier.html"><img src="../image/achat.png" alt="achat" />  </a></li>
+                </div>         
+                <div class="inscription">
+                    <li><a href="../navbar html/inscription.html"><img src="../IMAGE/inscription.png" alt="inscription" />  </a></li>
+                    </div>                    
+            </nav>
+            <h1 id="formulaire_h1">Formulaires</h1>
+    <form method="post" action="#">
+    <fieldset id="section1">
+        <legend>Informations importante :</legend>
+        <label for="name">Enter your name</label>
+        <input type="text" id="name" name="prenom" autocomplete autofocus></br> <!--Monoligne-->
+
+        <label for="pass">Enter your password</label>
+        <input type="password" id="mdp" name="pass" required="required"></br>
+
+        <label for="naissance">Téléphone</label>
+        <input type="text" id="naissance" name="naissance"></br>
+
+        <label for="email">Enter your mail</label>
+        <input type="email" id="email" name="mail" placeholder="Ex: nom.prenom@gmail.com"></br>
+        
+        <label for="naissance">Postal code</label>
+        <input type="text" id="postal-code" name="postal-code"></br>
+
+        <label for="address">Address</label>
+        <input type="address" id="address" name="address" placeholder="Optional"></br>
+        
+        Do you accept the terms of use? <br>
+        <input type="checkbox" name="cgu" value="true" id="cgu" checked="checked">
+        <label for="true">Accept</label>
+        <input type="checkbox" name="cgu" value="false" id="cgu">
+        <label for="false">Refuse</label>
+
+        
+    </fieldset>
+
+    
+            <video id="background-video" autoplay loop muted>
+                <source src="../VIDEO/background-editingpack.mp4" type="video/mp4">
+                </video>
+
+        </body>
+    
+</html>
