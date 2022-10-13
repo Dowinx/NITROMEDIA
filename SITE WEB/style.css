@@ -250,6 +250,53 @@ label {
     height: 20%;
     width: 20%;
 }
+
+#section1  {
+    text-align: center;
+}
+
+legend {
+    font-size: 40px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+label {
+    padding-right: 20px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.signin {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+span{
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateX(50px);
+    display: inline-block;
+}
+
+span.fade{
+   opacity: 1;
+   transform: translateX(0px);
+    color: rgb(213, 174, 243);
+}
+
 /* .title span {
     display: inline-block;
     overflow: hidden;
