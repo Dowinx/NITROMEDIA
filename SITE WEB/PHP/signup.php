@@ -1,3 +1,12 @@
+<!-- SESSION PHP PROFILE -->
+<!-- <?php session_start();
+    $_SESSION['pseudo'] = 'Graven'
+    $_SESSION['age'] = 42 
+    echo $_SESSION['pseudo'];
+    ?> -->
+
+
+
 <!DOCTYPE html>
 <html>
     <html lang="en">
@@ -24,7 +33,7 @@
                     <li><a href="../navbar html/inscription.html"><img src="../IMAGE/inscription.png" alt="inscription" />  </a></li>
                     </div>                    
             </nav>
-    <form method="post" action="#">
+    <form method="post">
     <fieldset id="section1">
         <legend class="form">Sign Up :</legend>
         <label for="name">Enter your name</label>
@@ -33,7 +42,7 @@
         <label for="pass">Enter your password</label>
         <input type="password" id="mdp" name="pass" required></br>
     </br>
-        <label for="pass">Confirm your password</label>
+    <label for="pass">Confirm your password</label>
         <input type="password" id="confirm-pass" name="confirm-password" required></br>
     </br>
         <label for="naissance">Phone</label>
@@ -53,18 +62,64 @@
         <label for="true">Accept</label>
         <input type="checkbox" name="cgu" value="false" id="cgu" >
         <label for="false">Refuse</label>
-        <input type="submit" value="Sign Up">
+        <input id = "formsend" type="submit" value="Sign Up">
         <ul>
             <a class ="signin" href="../navbar html/signin.html"><li>Sign In</li></a>
         </ul>
     </fieldset>
     
     </form>
-    
-            <video id="background-video" autoplay loop muted>
+    <video id="background-video" autoplay loop muted>
                 <source src="../VIDEO/background-editingpack.mp4" type="video/mp4">
                 </video>
 
         </body>
+   
+
+    <?php
+        if(isset($_POST['formsend'])){
+
+            extract ($_POST);
+
+            if(!empty($password && !empty($password) && !empty($email))){
+
+                if($password == $confirm-pass) {
+
+                $options = [
+                    'cost' => 12,
+                ];
+
+                $haspass = password_hash($password, PASSWORD_BCRYPT, $options);
+                
+                include 'PHP/database.php';
+                global $db;
+
+                $c = $db->prepare("SELECT email FROM users WHERE email = :email");
+                $c->execute([
+                    'email' => $email ]);
+                $result = $c->rowCont();
+
+                if($result == 0) {
+                    $q = $db->prepare('INSERT INTO users(email,password) VALUES(:email,:password)');
+                    $q->execute([
+                        'email' => $email,
+                        'password' => $hashpass
+                    ]);
+                    echo "Le compte a été créée";
+                } else {
+                    echo "Cet email existe déjà !"
+                }
+            }   
+                // if (password_verify($password, $hashpass)){
+                //     echo "correct";
+                // } else {
+                //     echo "incorrect";
+                // }
+            } else {
+                echo "les champs ne sont pas tous remplies";
+            }
+        }
+            
+    ?>
     
 </html>
